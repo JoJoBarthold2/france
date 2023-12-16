@@ -1,4 +1,4 @@
- gregdate =prompt("Enter the gregorian date you want to convert in the form DD/MM/YYYY").split("/")
-
- 
- 
+document.addEventListener("input", function(event) {
+    var userInput = event.target.value;
+    document.getElementById("output").innerText = "User Input: " + userInput;
+});
