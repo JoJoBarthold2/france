@@ -5,8 +5,8 @@ function displayInput() {
     var output = "";
     if (validInput(userInput))
     { 
-        var convertedInput = convertInput(userInput);
-        var output = computeDate(convertedInput);
+       
+        var output = convertDate(userInput);
      
     }
     else{
@@ -40,10 +40,18 @@ function validInput(string){
  return day > 0 && day <= monthLength[month - 1];
 }
 
-function convertInput(validInput){
 
-}
+function convertDate(input){
+    var parts = dateString.split("/");
+    var day = parseInt(parts[1], 10);
+    var month = parseInt(parts[0], 10);
+    var year = parseInt(parts[2], 10);
+    var monthLength = [ 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 ];
+    const french_months = ["Vendémiaire", "Brumaire", "Frimaire", "Nivôse", "Pluviôse", "Ventôse", "Germinal", "Floréal", "Prairial", "Messidor", "Thermidor", "Fructidor"];
+    const french_days = ["Primidi", "Duodi", "Tridi", "Quartidi", "Quintidi", "Sextidi", "Septidi", "Octidi", "Nonidi", "Decadi"];
+    if(year % 400 == 0 || (year % 100 != 0 && year % 4 == 0))
+     monthLength[1] = 29;
+    
 
-function computeDate(convertInput){
 
 }
